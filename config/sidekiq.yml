@@ -1,0 +1,26 @@
+:verbose: false
+:pidfile: ./tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+# スレッドの数(同時実行の量）
+# デフォルトでは、1 つの sidekiq プロセスで10 個のスレッドが作成
+:concurrency: 10
+# デフォルトキューが空の場合にのみ、testキュー内のジョブが処理される
+# 引数に重みをつける
+# 例）重みが 2 のキューは、重みが 1 のキューの 2 倍の頻度でチェックされます
+:queues:
+  - default
+  - test
+
+
+# tcの設定
+# :verbose: false
+# :daemon: true
+# :pidfile: tmp/pids/sidekiq.pid
+# :logfile: log/sidekiq.log
+# :concurrency: 25
+# :queues:
+#   - [default, 5]
+#   - [mailers, 7]
+#   - [tc_accountings, 1]
+#   - [expert_accountings, 1]
+#   - [spreadsheets, 1]
