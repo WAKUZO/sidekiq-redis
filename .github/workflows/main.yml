@@ -1,0 +1,7 @@
+# テスト用
+on: [push]
+jobs:
+  test-stg:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello world
